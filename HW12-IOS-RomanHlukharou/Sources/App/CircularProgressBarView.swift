@@ -12,7 +12,7 @@ class CircularProgressBarView: UIView {
     // MARK: - Properties
     
     private var circleLayer = CAShapeLayer()
-    private var progressLayer = CAShapeLayer()
+    var progressLayer = CAShapeLayer()
     private var startPoint = CGFloat(-Double.pi / 2)
     private var endPoint = CGFloat(3 * Double.pi / 2)
     
@@ -46,7 +46,7 @@ class CircularProgressBarView: UIView {
         let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
         circularProgressAnimation.duration = duration
         circularProgressAnimation.toValue = 1.0
-        circularProgressAnimation.fillMode = .backwards
+        circularProgressAnimation.fillMode = .forwards
         circularProgressAnimation.isRemovedOnCompletion = false
         progressLayer.add(circularProgressAnimation, forKey: "progressAnimation")
     }
